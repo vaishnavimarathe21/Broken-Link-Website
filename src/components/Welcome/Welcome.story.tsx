@@ -1,7 +1,18 @@
+import type { Meta, StoryObj } from '@storybook/react';
 import { Welcome } from './Welcome';
 
-export default {
+const meta: Meta<typeof Welcome> = {
   title: 'Welcome',
+  component: Welcome,
+  parameters: {
+    layout: 'centered',
+  },
+  tags: ['autodocs'],
 };
 
-export const Usage = () => <Welcome />;
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const Usage: Story = {
+  args: {},
+};

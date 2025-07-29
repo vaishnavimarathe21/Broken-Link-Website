@@ -1,36 +1,52 @@
 import '@mantine/core/styles.css';
 
-import React, { useEffect } from 'react';
-import { addons } from '@storybook/preview-api';
-import { DARK_MODE_EVENT_NAME } from 'storybook-dark-mode';
+import React from 'react';
+import type { Preview } from '@storybook/react';
 import { MantineProvider, useMantineColorScheme } from '@mantine/core';
 import { theme } from '../src/theme';
 
-const channel = addons.getChannel();
-
-export const parameters = {
-  layout: 'fullscreen',
-  options: {
-    showPanel: false,
-    storySort: (a, b) => {
-      return a.title.localeCompare(b.title, undefined, { numeric: true });
+const preview: Preview = {
+  parameters: {
+    layout: 'fullscreen',
+    options: {
+      showPanel: false,
+      storySort: (a, b) => {
+        return a.title.localeCompare(b.title, undefined, { numeric: true });
+      },
+    },
+  },
+  globalTypes: {
+    colorScheme: {
+      description: 'Global color scheme for components',
+      defaultValue: 'light',
+      toolbar: {
+        title: 'Color Scheme',
+        icon: 'circlehollow',
+        items: ['light', 'dark'],
+        dynamicTitle: true,
+      },
     },
   },
 };
 
-function ColorSchemeWrapper({ children }: { children: React.ReactNode }) {
+function ColorSchemeWrapper({ children, globals }: { children: React.ReactNode; globals: any }) {
   const { setColorScheme } = useMantineColorScheme();
-  const handleColorScheme = (value: boolean) => setColorScheme(value ? 'dark' : 'light');
 
-  useEffect(() => {
-    channel.on(DARK_MODE_EVENT_NAME, handleColorScheme);
-    return () => channel.off(DARK_MODE_EVENT_NAME, handleColorScheme);
-  }, [channel]);
+  React.useEffect(() => {
+    setColorScheme(globals.colorScheme);
+  }, [globals.colorScheme, setColorScheme]);
 
-  return children;
+  return <>{children}</>;
 }
 
 export const decorators = [
-  (renderStory: any) => <ColorSchemeWrapper>{renderStory()}</ColorSchemeWrapper>,
-  (renderStory: any) => <MantineProvider theme={theme}>{renderStory()}</MantineProvider>,
+  (Story, context) => (
+    <MantineProvider theme={theme}>
+      <ColorSchemeWrapper globals={context.globals}>
+        <Story />
+      </ColorSchemeWrapper>
+    </MantineProvider>
+  ),
 ];
+
+export default preview;
