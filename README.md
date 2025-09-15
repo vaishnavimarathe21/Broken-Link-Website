@@ -1,4 +1,20 @@
-# Mantine Vite template
+
+# Deadlink-Hunter🕵️ 
+
+Deadlink-Hunter is an open-source project designed to find broken links in GitHub repositories (with future support for other platforms).
+The goal is to help maintainers keep their documentation clean, reliable, and frustration-free for readers.
+
+## The why
+
+Documentation is the first entry point for most developers exploring a project.
+Yet, README files and docs often contain outdated or broken links – even in large, well-maintained repositories.
+
+But aren’t there already broken link checkers?
+There are — but most of them don’t look very good, their UIs are not user-friendly, and their broken link detection doesn’t cover all cases (for example, localhost:4000 is not actually broken).
+
+---
+
+## Mantine Vite template
 
 ## Features
 
