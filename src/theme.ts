@@ -1,4 +1,3 @@
-// theme.ts
 import { createTheme, MantineColorsTuple } from '@mantine/core';
 
 const primary: MantineColorsTuple = [
