@@ -1,52 +1,96 @@
+// theme.ts
 import { createTheme, MantineColorsTuple } from '@mantine/core';
 
 const primary: MantineColorsTuple = [
-  '#e6f7ff',
-  '#bae7ff',
-  '#91d5ff',
-  '#69c0ff',
-  '#40a9ff',
-  '#1890ff',
-  '#096dd9',
-  '#0050b3',
-  '#003a8c',
-  '#002766',
+  '#f1f5f9',
+  '#cbd5e1',
+  '#94a3b8',
+  '#64748b',
+  '#475569',
+  '#334155',
+  '#1e293b',
+  '#0f172a',
+  '#0f172a',
+  '#0f172a',
 ];
 
-const accent: MantineColorsTuple = [
-  '#e6faff',
+const accentCyan: MantineColorsTuple = [
+  '#e0faff',
   '#b3f0ff',
   '#80e6ff',
   '#4ddbff',
-  '#1ad1ff',
-  '#00bcd4',
-  '#00acc1',
-  '#0097a7',
-  '#00838f',
-  '#006064',
+  '#22d3ee',
+  '#06b6d4',
+  '#0891b2',
+  '#036c87',
+  '#025b71',
+  '#02475b',
+];
+
+const accentPurple: MantineColorsTuple = [
+  '#f5f3ff',
+  '#ede9fe',
+  '#ddd6fe',
+  '#c4b5fd',
+  '#a78bfa',
+  '#8b5cf6',
+  '#7c3aed',
+  '#6d28d9',
+  '#5b21b6',
+  '#4c1d95',
 ];
 
 const success: MantineColorsTuple = [
-  '#f0f9f0',
-  '#d4edd4',
-  '#b8e2b8',
-  '#9cd69c',
-  '#7fcb7f',
-  '#2e7d32',
-  '#2c6e2c',
-  '#295f29',
-  '#265026',
-  '#234123',
+  '#ecfdf5',
+  '#d1fae5',
+  '#a7f3d0',
+  '#6ee7b7',
+  '#34d399',
+  '#10b981',
+  '#16a34a',
+  '#15803d',
+  '#166534',
+  '#14532d',
+];
+
+const warning: MantineColorsTuple = [
+  '#fef3c7',
+  '#fde68a',
+  '#fcd34d',
+  '#fbbf24',
+  '#facc15',
+  '#eab308',
+  '#ca8a04',
+  '#a16207',
+  '#92400e',
+  '#78350f',
+];
+
+const error: MantineColorsTuple = [
+  '#fee2e2',
+  '#fecaca',
+  '#fca5a5',
+  '#f87171',
+  '#ef4444',
+  '#dc2626',
+  '#b91c1c',
+  '#991b1b',
+  '#7f1d1d',
+  '#6b1414',
 ];
 
 export const theme = createTheme({
   colors: {
     primary,
-    accent,
+    cyan: accentCyan,
+    purple: accentPurple,
     success,
+    warning,
+    error,
   },
-  primaryColor: 'primary',
+  primaryColor: 'cyan',
   primaryShade: 5,
+  fontFamily: 'Open Sans, sans-serif',
   fontSizes: {
     xs: '0.75rem',
     sm: '0.875rem',
@@ -55,5 +99,5 @@ export const theme = createTheme({
     xl: '1.25rem',
     '2xl': '1.5rem',
   },
-  fontFamily: 'Open Sans, sans-serif',
+  defaultRadius: 'md',
 });
