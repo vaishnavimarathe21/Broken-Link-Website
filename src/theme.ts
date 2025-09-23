@@ -85,7 +85,7 @@ export const theme = createTheme({
     cyan: accentCyan,
     purple: accentPurple,
     success,
-    warning,
+    warning,  
     error,
   },
   primaryColor: 'cyan',
@@ -100,4 +100,19 @@ export const theme = createTheme({
     '2xl': '1.5rem',
   },
   defaultRadius: 'md',
+  spacing: {
+    xs: '2px',
+    sm: '4px',
+    md: '8px',
+    lg: '16px',
+    xl: '32px',
+    '2xl': '64px',
+  },
+
 });
+
+
+export const sizesArray = [2, 4, 8, 16, 32];
+
+
+
