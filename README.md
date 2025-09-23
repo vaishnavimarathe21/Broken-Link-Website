@@ -17,7 +17,53 @@ Yet, README files and docs often contain outdated or broken links – even in la
 But aren’t there already broken link checkers?
 There are — but most of them don’t look very good, their UIs are not user-friendly, and their broken link detection doesn’t cover all cases (for example, localhost:4000 is not actually broken).
 
+
 ---
+
+## Contributing
+
+Contributions are welcome and greatly appreciated!
+
+To contribute:
+
+1. **Fork** this repository to your own GitHub account.
+2. **Clone** your fork locally:
+   ```bash
+   git clone https://github.com/<your-username>/Deadlink-Hunter.git
+   cd Deadlink-Hunter
+   ```
+3. Install dependencies using **pnpm** (please do not use npm or yarn):
+   ```bash
+   pnpm install
+   ```
+4. Create a new branch for your feature or fix:
+   ```bash
+   git checkout -b my-feature
+   ```
+5. Make your changes and commit them with clear messages.
+6. Push your branch to your fork:
+   ```bash
+   git push origin my-feature
+   ```
+7. Create a **Pull Request** from your repository’s branch to the `main` branch of the original repository.
+
+
+---
+
+
+Install dependencies using pnpm (please do not use npm or yarn):
+
+`pnpm install`
+
+Create a new branch for your feature or fix:
+
+`git checkout -b my-feature`
+
+Make your changes and commit them with clear messages.
+
+Push your branch to your fork, and craete pull requests from your repository into the main branch inside the original repository
+
+
 
 ## Mantine Vite template
 
@@ -30,6 +76,8 @@ This template comes with the following features:
 - [Storybook](https://storybook.js.org/)
 - [Vitest](https://vitest.dev/) setup with [React Testing Library](https://testing-library.com/docs/react-testing-library/intro)
 - ESLint setup with [eslint-config-mantine](https://github.com/mantinedev/eslint-config-mantine)
+
+
 
 ## pnpm scripts
 
