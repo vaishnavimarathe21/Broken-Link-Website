@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Button } from './Button';
+import { IconArrowRight, IconPhoto } from '@tabler/icons-react';
 
 const meta: Meta<typeof Button> = {
   title: 'Components/UI/Button',
@@ -7,7 +8,7 @@ const meta: Meta<typeof Button> = {
   parameters: {
     layout: 'centered',
   },
-  tags: ['autodocs'],
+  //tags: ['autodocs'],
 };
 
 export default meta;
@@ -30,3 +31,14 @@ export const buttonWithStyles: Story = {
     },
   },
 };
+
+export const buttonWithIcon: Story = {
+  render: (args) => <Button {...args} />,
+  args: {
+    children: 'Button with icon',
+    variant: 'primary',
+    leftSection: <IconPhoto size={14} />,
+    rightSection: <IconArrowRight size={14} />,
+  },
+};
+
