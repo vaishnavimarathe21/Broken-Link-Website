@@ -1,4 +1,4 @@
-  // Following the same pattern as button styles but adapted for dividers
+ 
   import { theme,sizesArray } from "@/theme";
   export const dividerVariants = {
     primary: {

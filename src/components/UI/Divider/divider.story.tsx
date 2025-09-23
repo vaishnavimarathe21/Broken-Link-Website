@@ -8,7 +8,7 @@ export default {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: Object.keys(dividerVariants), // this creates the dropdown
+      options: Object.keys(dividerVariants),
     },
   },
 };
