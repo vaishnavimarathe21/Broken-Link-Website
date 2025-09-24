@@ -1,6 +1,6 @@
 import { theme } from '@/theme';
 
-const colors = theme.colors;
+const colors = theme.colors as Record<string, readonly string[]>; 
 
 export const buttonVariants = {
   primary: {
