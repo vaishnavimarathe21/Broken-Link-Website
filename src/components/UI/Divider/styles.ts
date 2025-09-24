@@ -2,6 +2,7 @@ import { theme } from "@/theme";
 
 const defaultDividerStyle = {
   margin: theme.spacing.md,
+  height: "1px",
 };
 
 export const dividerVariants = {
