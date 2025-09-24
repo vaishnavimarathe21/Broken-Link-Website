@@ -1,5 +1,5 @@
 import { theme } from '@/theme';
-const colors = theme.colors;
+const colors = theme.colors as Record<string, readonly string[]>;
 
 export const cardStyles = {
   default: {
@@ -7,6 +7,6 @@ export const cardStyles = {
     borderRadius: '0.5rem',
     backgroundColor: colors.primary[5],
     boxShadow: '0 1px 3px rgba(0,0,0,0.1)',
-    color: 'white',
+    color: colors.cyan[0],
   },
 };
