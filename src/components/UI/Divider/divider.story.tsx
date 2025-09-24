@@ -1,19 +1,33 @@
-import { Divider } from './Divider';
-import { dividerVariants } from './styles';
-import { DividerProps } from './Divider';
+// src/components/UI/Divider.stories.tsx
 
-export default {
-  title: 'UI/Divider',
+import type { Meta, StoryObj } from '@storybook/react';
+import { Divider } from './Divider';
+
+const meta: Meta<typeof Divider> = {
+  title: 'Components/UI/Divider',
   component: Divider,
-  argTypes: {
-    variant: {
-      control: { type: 'select' },
-      options: Object.keys(dividerVariants),
-    },
+};
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+// Default horizontal divider
+export const DividerDefault: Story = {
+  args: {
+    variant: 'primary',
+    orientation: 'horizontal',
   },
 };
 
-export const Default = (args: DividerProps) => <Divider {...args} />;
-Default.args = {
-  variant: 'horizontal',
+// Divider with custom style
+export const WithStyles: Story = {
+  args: {
+    variant: 'secondary',
+    orientation: 'horizontal',
+    style: {
+      backgroundColor: 'cyan',
+      height: '4px',
+      margin: '1rem 0',
+    },
+  },
 };

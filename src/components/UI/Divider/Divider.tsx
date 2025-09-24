@@ -7,23 +7,26 @@ export interface DividerProps extends React.HTMLAttributes<HTMLHRElement> {
   style?: CSSProperties
   variant?: keyof typeof dividerVariants
   orientation?: "horizontal" | "vertical"
-  size?: "sm" | "md" | "lg"
 }
 
 export const Divider = ({
   style,
-  variant = "primary",
+  variant = "secondary",
   orientation = "horizontal",
-  size = "md",
-  className,
   ...props
 }: DividerProps) => {
   const variantStyle = dividerVariants[variant]
 
+  const defaultStyle =
+    orientation === "horizontal"
+      ? { height: "1px" }
+      : { width: "1px" }
 
   return (
     <MantineDivider
-      style={{ ...variantStyle, ...style }} {...props} 
+      orientation={orientation}
+      style={{ ...variantStyle, ...defaultStyle, ...style }}
+      {...props}
     />
   )
 }
