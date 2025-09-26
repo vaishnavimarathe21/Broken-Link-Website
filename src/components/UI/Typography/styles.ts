@@ -18,4 +18,11 @@ export const typographyVariants = {
   error: {
     color: colors.error[5],
   },
+  title: {
+    color: colors.primary[5],
+    size: 'extralarge',
+  },
+  subtitle: {
+    size: 'large',
+  },
 };

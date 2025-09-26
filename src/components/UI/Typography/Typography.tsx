@@ -25,7 +25,7 @@ export const Typography = ({
   children,
   ...props
 }: SharedTypographyProps) => {
-  const variantStyle = typographyVariants[variant];
+  const variantStyle = typographyVariants[variant] ?? {};
   const mappedSize = sizeMapper[size];
 
   return (
