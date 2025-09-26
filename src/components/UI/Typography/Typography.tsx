@@ -1,8 +1,7 @@
 import { CSSProperties } from 'react';
 import { Text as MantineText, TextProps } from '@mantine/core';
 import { typographyVariants } from './styles';
-
-export type CustomSize = 'small' | 'medium' | 'large' | 'extraLarge';
+import { CustomSize } from './types';
 
 const sizeMapper: Record<CustomSize, string> = {
   small: 'sm',
