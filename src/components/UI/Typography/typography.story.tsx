@@ -7,7 +7,7 @@ const meta: Meta<typeof Typography> = {
   argTypes: {
     variant: {
       control: { type: 'select' },
-      options: ['primary', 'secondary', 'success', 'warning', 'error'],
+      options: ['primary', 'secondary', 'success', 'warning', 'error', 'title', 'subtitle'],
     },
   },
   tags: ['autodocs'],
@@ -24,49 +24,38 @@ export const typography: Story = {
 };
 
 export const typographyWithChildren: Story = {
-  render: () => (
-    <Typography>
-      <h1>Hello world!</h1>
-    </Typography>
-  ),
+  args: {
+    children: <h1>Hello World!</h1>,
+  },
 };
 export const typographyWithVariant: Story = {
-  render: () => {
-    return <Typography variant="error">Hello World!</Typography>;
+  args: {
+    children: 'Hello World!',
+    variant: 'title',
   },
 };
 
 export const typographyWithBodyText: Story = {
-  render: () => {
-    return (
-      <Typography>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+  args: {
+    children: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
         been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
         galley of type and scrambled it to make a type specimen book. It has survived not only five
         centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
         passages, and more recently with desktop publishing software like Aldus PageMaker including
-        versions of Lorem Ipsum
-      </Typography>
-    );
+        versions of Lorem Ipsum`,
   },
 };
 
 export const typographyWithTruncatedText: Story = {
-  render: (args) => {
-    return (
-      <Typography lineClamp={args.lineClamp}>
-        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+  args: {
+    children: `Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
         been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
         galley of type and scrambled it to make a type specimen book. It has survived not only five
         centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
         It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
         passages, and more recently with desktop publishing software like Aldus PageMaker including
-        versions of Lorem Ipsum
-      </Typography>
-    );
-  },
-  args: {
+        versions of Lorem Ipsum`,
     lineClamp: 1,
   },
 };

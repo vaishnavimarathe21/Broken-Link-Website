@@ -2,7 +2,7 @@ import { CSSProperties } from 'react';
 import { Text as MantineText, TextProps } from '@mantine/core';
 import { typographyVariants } from './styles';
 
-type CustomSize = 'small' | 'medium' | 'large' | 'extralarge';
+export type CustomSize = 'small' | 'medium' | 'large' | 'extralarge';
 
 const sizeMapper: Record<CustomSize, string> = {
   small: 'sm',
@@ -26,7 +26,8 @@ export const Typography = ({
   ...props
 }: SharedTypographyProps) => {
   const variantStyle = typographyVariants[variant] ?? {};
-  const mappedSize = sizeMapper[size];
+  const resolvedSize = variantStyle.size ?? size;
+  const mappedSize = sizeMapper[resolvedSize];
 
   return (
     <MantineText size={mappedSize} style={{ ...variantStyle, ...style }} {...props}>
