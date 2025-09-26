@@ -1,11 +1,11 @@
-export const CustomSize = {
-  small: 'small',
-  medium: 'medium',
-  large: 'large',
-  extraLarge: 'extraLarge',
+export const CUSTOM_SIZES = {
+  SMALL: 'small',
+  MEDIUM: 'medium',
+  LARGE: 'large',
+  EXTRA_LARGE: 'extraLarge',
 } as const;
 
-export type CustomSize = keyof typeof CustomSize;
+export type CustomSize = (typeof CUSTOM_SIZES)[keyof typeof CUSTOM_SIZES];
 
 export interface TypographyVariant {
   color: string;
