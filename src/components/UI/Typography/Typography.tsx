@@ -2,13 +2,13 @@ import { CSSProperties } from 'react';
 import { Text as MantineText, TextProps } from '@mantine/core';
 import { typographyVariants } from './styles';
 
-export type CustomSize = 'small' | 'medium' | 'large' | 'extralarge';
+export type CustomSize = 'small' | 'medium' | 'large' | 'extraLarge';
 
 const sizeMapper: Record<CustomSize, string> = {
   small: 'sm',
   medium: 'md',
   large: 'lg',
-  extralarge: 'xl',
+  extraLarge: 'xl',
 };
 
 interface SharedTypographyProps extends Omit<TextProps, 'variant' | 'style' | 'size'> {
