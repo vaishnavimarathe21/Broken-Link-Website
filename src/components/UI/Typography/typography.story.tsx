@@ -22,12 +22,14 @@ export const typography: Story = {
   args: {
     children: 'Hello World!',
     variant: 'success',
+    'data-testid': 'typography-component', // <-- 1. ADD THIS LINE
   },
 
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    const textElement = await canvas.getByText('Hello World!');
-    await expect(textElement).toBeInTheDocument();
+    // 2. CHANGE THE LINE BELOW to use the test ID
+    const component = await canvas.findByTestId('typography-component');
+    await expect(component).toBeInTheDocument();
   },
 };
 
