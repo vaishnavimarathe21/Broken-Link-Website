@@ -22,7 +22,6 @@ export const typography: Story = {
   args: {
     children: 'Hello World!',
     variant: 'success',
-    'data-testid': 'typography-component', 
   },
 
   play: async ({ canvasElement }) => {
