@@ -27,7 +27,6 @@ export const typography: Story = {
 
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
-    // 2. CHANGE THE LINE BELOW to use the test ID
     const component = await canvas.findByTestId('typography-component');
     await expect(component).toBeInTheDocument();
   },
