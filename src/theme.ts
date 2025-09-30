@@ -1,4 +1,4 @@
-import { createTheme, MantineColorsTuple, MantineTheme } from '@mantine/core';
+import { createTheme, MantineColorsTuple } from '@mantine/core';
 
 const primary: MantineColorsTuple = [
   '#f1f5f9',
@@ -86,7 +86,7 @@ export const theme = createTheme({
     cyan: accentCyan,
     purple: accentPurple,
     success,
-    warning,  
+    warning,
     error,
   },
   primaryColor: 'cyan',
@@ -109,10 +109,4 @@ export const theme = createTheme({
     xl: '32px',
     '2xl': '64px',
   },
-  
 });
-
-
-
-
-

@@ -1,33 +1,36 @@
-import { theme } from "@/theme";
+import { theme } from '@/theme';
 
 const defaultDividerStyle = {
-  margin: theme.spacing.md,
-  height: "1px",
+  // TODO: Replace with theme spacing when we will fix the type of the theme 
+  margin: theme.spacing?.md || '16px',
+  height: '1px',
 };
+
+const colors = theme.colors as Record<string, readonly string[]>;
 
 export const dividerVariants = {
   primary: {
     ...defaultDividerStyle,
-    backgroundColor: theme.colors.cyan[5],
+    backgroundColor: colors.cyan[5],
   },
   secondary: {
     ...defaultDividerStyle,
-    backgroundColor: theme.colors.success[5],
+    backgroundColor: colors.success[5],
   },
   muted: {
     ...defaultDividerStyle,
-    backgroundColor: theme.colors.primary[5],
+    backgroundColor: colors.primary[5],
   },
   border: {
     ...defaultDividerStyle,
-    backgroundColor: theme.colors.purple[5],
+    backgroundColor: colors.purple[5],
   },
   accent: {
     ...defaultDividerStyle,
-    backgroundColor: theme.colors.primary[5],
+    backgroundColor: colors.primary[5],
   },
   error: {
     ...defaultDividerStyle,
-    backgroundColor: theme.colors.error[5],
+    backgroundColor: colors.error[5],
   },
 };
