@@ -1,5 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { Typography } from './Typography';
+import { expect } from '@storybook/jest';
+import { within } from '@storybook/testing-library';
 
 const meta: Meta<typeof Typography> = {
   title: 'Components/UI/Typography',
@@ -20,6 +22,12 @@ export const typography: Story = {
   args: {
     children: 'Hello World!',
     variant: 'success',
+  },
+
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+    const component = await canvas.findByTestId('typography-component');
+    await expect(component).toBeInTheDocument();
   },
 };
 
