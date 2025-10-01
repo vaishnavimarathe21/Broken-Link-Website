@@ -15,6 +15,7 @@ You can check the [more elaborated ui](https://link-guard-191fc128.base44.app) t
 ## Table of Contents
 - [The why](#the-why)
 - [Contributing](#contributing)
+- [Docker Setup](#docker-setup)
 - [Mantine Vite template](#mantine-vite-template)
 - [Features](#features)
 - [pnpm scripts](#pnpm-scripts)
@@ -79,6 +80,52 @@ Create a new branch for your feature or fix:
 Make your changes and commit them with clear messages.
 
 Push your branch to your fork, and craete pull requests from your repository into the main branch inside the original repository
+
+---
+
+## Docker Setup
+
+This project includes Docker support for easy deployment and development. You can run the application using Docker in two ways:
+
+### Option 1: Using Docker Compose (Recommended)
+
+The easiest way to run the application is using Docker Compose:
+
+```bash
+# Build and start the application
+docker-compose up --build
+
+# Or run in detached mode (background)
+docker-compose up --build -d
+```
+
+The application will be available at `http://localhost`
+
+To stop the application:
+```bash
+docker-compose down
+```
+
+### Option 2: Using Docker directly
+
+You can also build and run the Docker container directly:
+
+```bash
+# Build the Docker image
+docker build -t deadlink-hunter .
+
+# Run the container
+docker run -p 80:6006 deadlink-hunter
+```
+
+The application will be available at `http://localhost`
+
+### Docker Configuration
+
+- **Port**: The application runs on port `6006` inside the container and is mapped to port `80` on your host machine
+- **Web Server**: Uses nginx to serve the built application
+- **Build Process**: Multi-stage build that installs dependencies, builds the app, and serves it with nginx
+- **Base Image**: Built on `node:20-alpine` for the build stage and `nginx:1.27-alpine` for the runtime
 
 ---
 
