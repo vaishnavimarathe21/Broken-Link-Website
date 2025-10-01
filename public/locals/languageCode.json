@@ -1,8 +1,13 @@
 {
+    "be": "be.json",
+    "de": "de.json",
     "en": "en.json",
     "es": "es.json",
+    "fr": "fr.json",
+    "he": "he.json",
+    "it": "it.json",
+    "pl": "pl.json",
     "pt-BR": "ptbr.json",
-    "de": "de.json",
     "ru": "ru.json",
     "uk": "uk.json"
 }
