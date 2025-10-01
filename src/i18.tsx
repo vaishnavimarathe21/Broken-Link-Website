@@ -9,15 +9,18 @@ i18n
     .init({
         resources: {
             en: {
-                translation: enTranslations,
-            },
-  es: {
-                translation: esTranslations,
-            },
-            'pt-BR': {
-                translation: ptBrTranslations,
-            },
+            translation: enTranslations,
         },
+        es: {
+            translation: esTranslations,
+        },
+        'pt-BR': {
+            translation: ptBrTranslations,
+        },
+        de: {
+            translation: deTranslations,
+        },
+    },
         lng: 'en',
         fallbackLng: 'en',
         interpolation: {
