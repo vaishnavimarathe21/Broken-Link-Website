@@ -16,7 +16,7 @@ const withErrorBoundary = (element: React.ReactNode) => (
 
 const router = createBrowserRouter([
   {
-    path: '/',
+    path: ROUTES.HOME,
     errorElement: (
       <ErrorBoundary>
         <ErrorComponent />
