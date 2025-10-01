@@ -1,10 +1,18 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { ErrorComponent } from './components/ErrorBoundary/components/ErrorComponent';
 import { ErrorBoundary } from './components/ErrorBoundary/ErrorBoundary';
+import { ROUTES } from './constants/routes.consts';
 import AboutPage from './pages/About/About.page';
 import { HomePage } from './pages/Home/Home.page';
 import ScannerPage from './pages/Scanner/Scanner.page';
 import StatisticsPage from './pages/Statistics/Statistics.page';
+
+const withErrorBoundary = (element: React.ReactNode) => (
+  <ErrorBoundary>
+    <ErrorComponent />
+    {element}
+  </ErrorBoundary>
+);
 
 const router = createBrowserRouter([
   {
@@ -17,19 +25,19 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <HomePage />,
+        element: withErrorBoundary(<HomePage />),
       },
       {
-        path: 'about',
-        element: <AboutPage />,
+        path: ROUTES.ABOUT,
+        element: withErrorBoundary(<AboutPage />),
       },
       {
-        path: 'scanner',
-        element: <ScannerPage />,
+        path: ROUTES.SCANNER,
+        element: withErrorBoundary(<ScannerPage />),
       },
       {
-        path: 'statistics',
-        element: <StatisticsPage />,
+        path: ROUTES.STATISTICS,
+        element: withErrorBoundary(<StatisticsPage />),
       },
     ],
   },
