@@ -60,7 +60,7 @@ To contribute:
     ```
 3.  Install dependencies using **pnpm** (please do not use npm or yarn):
     ```bash
-    npm install
+    pnpm install
     ```
 4.  Create a new branch for your feature or fix:
     ```bash
